@@ -111,3 +111,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# IDEBench
+data/flights/default_workflows/
+data/flights/workflows/test.json
+data/flights/workflowtypes/
