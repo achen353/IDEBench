@@ -14,6 +14,7 @@ _idea
 flights.csv
 flights.csv
 output.csv
+.DS_Store
 
 margin_errors
 
@@ -114,5 +115,5 @@ ENV/
 
 # IDEBench
 data/flights/default_workflows/
-data/flights/workflows/test.json
-data/flights/workflowtypes/
+data/flights/
+data/tpch/
