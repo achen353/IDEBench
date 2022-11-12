@@ -14,6 +14,7 @@ from optparse import OptionParser
 import time
 import os
 from collections import OrderedDict
+from decimal import Decimal
 
 current_milli_time = lambda: int(round(time.time() * 1000))
 
@@ -210,6 +211,10 @@ class DataGen:
         for cast_col in cast_cols:
             if cast_col["cast"] == "int":
                 result_frame[cast_col["field"]] = result_frame[cast_col["field"]].astype(int)
+            elif cast_col["cast"] == "decimal":
+                result_frame[cast_col["field"]] = result_frame[cast_col["field"]].apply(lambda x: Decimal(x))
+            elif cast_col["cast"] == "date":
+                result_frame[cast_col["field"]] = pd.to_datetime(result_frame[cast_col["field"]])
             else:
                 raise Exception("unsupported cast")
 

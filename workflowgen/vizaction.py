@@ -37,8 +37,7 @@ class VizAction(BaseAction):
             if self.dim_to_type[dimension["name"]] == "quantitative":
                 dim_max_val = df[dimension["name"]].max()
                 dim_min_val = df[dimension["name"]].min()
-                #d_bin["width"] = round(random.uniform(0.025, 0.1) * (dim_max_val - dim_min_val))
-                d_bin["width"] = round(random.uniform(0.025, 0.1) * (dim_max_val - dim_min_val))
+                d_bin["width"] = random.uniform(0.025, 0.1) * (dim_max_val - dim_min_val)
             elif self.dim_to_type[dimension["name"]] == "categorical":
                 try:
                     pd.to_numeric(df[dimension["name"]])
